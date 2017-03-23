@@ -1,0 +1,15 @@
+# Logs
+*.log
+
+# Dependency directories
+node_modules
+typings
+build
+
+# Intellij
+.idea
+*.iml
+
+# Generierte JS und Map Dateien
+src/**/*.js
+src/**/*.map

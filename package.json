@@ -1,0 +1,52 @@
+{
+  "name": "gulpproj01",
+  "version": "1.0.0",
+  "description": "Das ist die Beschreibung",
+  "main": "index.js",
+  "scripts": {
+    "clean": "gulp clean",
+    "compile": "gulp compile",
+    "build": "gulp build",
+    "typings": "typings",
+    "start": "concurrent --kill-others \"gulp watch\" \"lite-server\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "typings install --proxy=http://proxy-surf:8080"
+  },
+  "author": "Hannes Ehrensperger",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/router": "3.0.0",
+    "@angular/upgrade": "2.0.0",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "0.19.27",
+    "zone.js": "^0.6.23"
+  },
+  "devDependencies": {
+    "concurrently": "^2.2.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^6.1.1 ",
+    "gulp-typescript": "^2.13.6",
+    "lite-server": "^2.2.2",
+    "require-dir": "^0.3.1",
+    "ts-node": "^1.7.0",
+    "tslint": "^3.5.0",
+    "typescript": "^2.0.2",
+    "typings": "^1.3.3"
+  },
+  "keywords": [
+    "Scluessel",
+    "Woerter"
+  ]
+}

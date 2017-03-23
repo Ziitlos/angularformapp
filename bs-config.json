@@ -1,0 +1,11 @@
+{
+  "port": 8000,
+  "startPath": "formapp/index.html",
+  "browser": "chrome",
+  "files": [
+    "build/**/*.{html,htm,css,js}"
+  ],
+      "server": {
+    "baseDir": "build"
+  }
+}
