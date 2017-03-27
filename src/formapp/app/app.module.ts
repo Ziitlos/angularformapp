@@ -9,18 +9,26 @@ import {HomeComponent} from "./home/home.component";
 import {KontaktComponent} from "./kontakt/kontakt.component";
 import {UserModule} from "./user/user.module";
 import {routing} from "./app.routing";
+import {FlugSuchenComponent} from './flug/flugsuchen.component';
+import {FlugService} from './flug/service/flug.service';
+import {Http, ConnectionBackend, HttpModule} from '@angular/http';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
     imports: [  BrowserModule,
                 UserModule,
-                routing
+                routing,
+                HttpModule,
+                FormsModule
     ],
     declarations: [ AppComponent,
                     HomeComponent,
-                    KontaktComponent
+                    KontaktComponent,
+                    FlugSuchenComponent
     ],
-    bootstrap: [AppComponent]
+    providers: [ FlugService ],
+    bootstrap: [ AppComponent ]
 })
 
 export class AppModule {}

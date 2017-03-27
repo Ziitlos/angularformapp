@@ -1,0 +1,36 @@
+<section>
+    <h1>Flug suchen!</h1>
+    <form>
+
+        <div>
+            <label>Von:</label>
+            <input [(ngModel)]="von"
+                   name="von">
+        </div>
+
+
+        <div>
+            <label>Nach:</label>
+            <input [(ngModel)]="nach" name="nach">
+        </div>
+
+        <div>
+            <button (click)="suchen()" [disabled]="!von || !nach">Suchen!</button>
+        </div>
+
+        <table>
+            <tr *ngFor="let flug of fluege" [class.active]="flug == selectedFlug">
+                <td>{{flug.id}}</td>
+                <td>{{flug.datum | date:'dd.MM.yyyy HH:mm'}}</td>
+                <td>{{flug.abflugort}}</td>
+                <td>{{flug.zielort}}</td>
+                <td><a (click)="select(flug)">Auswählen!</a></td>
+            </tr>
+        </table>
+
+    </form>
+    <pre>Warenkorb
+----------------------
+{{ selectedFlug | json }}
+</pre>
+</section>
