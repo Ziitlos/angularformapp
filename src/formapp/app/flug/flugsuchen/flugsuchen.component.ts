@@ -2,15 +2,17 @@
  * Created by hkfq4 on 27.03.2017.
  */
 
-
 import {Component} from '@angular/core';
-import {Flug} from '../entities/flug';
-import {FlugService} from './service/flug.service';
+import {Flug} from '../../entities/flug';
+import {FlugService} from '../service/flug.service';
+
+
 
 @Component({
     moduleId: module.id,
     selector: 'flugsuchen',
-    templateUrl: 'flugsuchen.component.html'
+    templateUrl: 'flugsuchen.component.html',
+    styles: ['flugsuchen.component.css']
 })
 
 export  class FlugSuchenComponent {

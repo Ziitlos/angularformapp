@@ -7,7 +7,7 @@ import{Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {KontaktComponent} from './kontakt/kontakt.component';
 import {ModuleWithProviders} from '@angular/core';
-import {FlugSuchenComponent} from './flug/flugsuchen.component';
+import {FlugSuchenComponent} from './flug/flugsuchen/flugsuchen.component';
 
 const appRoutes: Routes = [
     {

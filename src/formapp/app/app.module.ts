@@ -3,16 +3,18 @@
  */
 
 import {NgModule} from '@angular/core';
-import {BrowserModule} from "@angular/platform-browser";
-import {AppComponent} from './app.component';
-import {HomeComponent} from "./home/home.component";
-import {KontaktComponent} from "./kontakt/kontakt.component";
-import {UserModule} from "./user/user.module";
-import {routing} from "./app.routing";
-import {FlugSuchenComponent} from './flug/flugsuchen.component';
-import {FlugService} from './flug/service/flug.service';
-import {Http, ConnectionBackend, HttpModule} from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {UserModule} from './user/user.module';
+import {routing} from './app.routing';
+import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
+import {AppComponent} from './app.component';
+import {HomeComponent} from './home/home.component';
+import {KontaktComponent} from './kontakt/kontakt.component';
+import {FlugSuchenComponent} from './flug/flugsuchen/flugsuchen.component';
+import {FlugService} from './flug/service/flug.service';
+import {OrtValidatorDirective} from './validators/simple-ort.validator';
+import {OrtAsyncValidatorDirective} from './validators/ort-async.validator.directive';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import {FormsModule} from '@angular/forms';
     declarations: [ AppComponent,
                     HomeComponent,
                     KontaktComponent,
-                    FlugSuchenComponent
+                    FlugSuchenComponent,
+                    OrtValidatorDirective,
+                    OrtAsyncValidatorDirective
     ],
     providers: [ FlugService ],
     bootstrap: [ AppComponent ]

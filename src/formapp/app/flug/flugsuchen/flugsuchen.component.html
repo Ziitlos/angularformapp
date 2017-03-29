@@ -1,12 +1,25 @@
 <section>
     <h1>Flug suchen!</h1>
-    <form>
+    <form #f="ngForm">
 
         <div>
             <label>Von:</label>
             <input [(ngModel)]="von"
-                   name="von">
+                   required
+                   minlength="3"
+                   maxlength="30"
+                   ort
+                   name="von"
+                   class="form-control"
+            >
         </div>
+
+
+        <div *ngIf="f?.controls?.von?.hasError('ort')">
+            Dieser Flughafen existiert nicht.
+        </div>
+
+
 
 
         <div>
