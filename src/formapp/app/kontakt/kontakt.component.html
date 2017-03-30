@@ -7,4 +7,45 @@
         8600 Dübendorf
     </p>
 
+    <form #fa="ngForm">
+
+        (simple-anrede.validator)<br>
+        Anrede:
+        <input [(ngModel)]="anrede"
+        required
+        minlength="3"
+        maxlength="8"
+        anreden
+        name="anrede"
+        class="form-control"
+    >
+
+    </form>
+
+    <div *ngIf="fa?.controls?.anrede?.hasError('anreden')">
+        Keine gültige Anrede. Herr, Frau, Doktor.
+    </div>
+    <br>
+    <br>
+
+    <form #kt="ngForm">
+        (kanton.validator.directive)<br>
+        Kantone:
+        <input [(ngModel)]="kanton"
+               name="kanton"
+               required
+               minlength="2"
+               maxlength="2"
+               kantonsListe="AG,AR,AI,BL,BS,BE,FR,GE,GL,GR,JU,LU,NE,NW,OW,SG,SH,SZ,SO,TI,TG,UR,VD,VS,ZH,ZG"
+        >
+    </form>
+
+    {{ kt?.controls?.kanton?.hasError('kantonsListe') }}
+
+    <div *ngIf="kt?.controls?.kanton?.hasError('kantonsListe')">
+        {{ kanton }} ist kein Kanton.
+    </div>
+
+
+
 </section>

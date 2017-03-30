@@ -15,6 +15,8 @@ import {FlugSuchenComponent} from './flug/flugsuchen/flugsuchen.component';
 import {FlugService} from './flug/service/flug.service';
 import {OrtValidatorDirective} from './validators/simple-ort.validator';
 import {OrtAsyncValidatorDirective} from './validators/ort-async.validator.directive';
+import {AnredeValidatorDirective} from './validators/simple-anrede.validator';
+import {KantonValidatorDirective} from './validators/kanton.validator.directive';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {OrtAsyncValidatorDirective} from './validators/ort-async.validator.direc
                     KontaktComponent,
                     FlugSuchenComponent,
                     OrtValidatorDirective,
-                    OrtAsyncValidatorDirective
+                    OrtAsyncValidatorDirective,
+                    AnredeValidatorDirective,
+                    KantonValidatorDirective
     ],
     providers: [ FlugService ],
     bootstrap: [ AppComponent ]
