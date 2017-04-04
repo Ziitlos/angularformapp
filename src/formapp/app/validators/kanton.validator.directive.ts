@@ -18,21 +18,22 @@ import {Input, Directive, forwardRef, Attribute} from '@angular/core';
 
 
 export class KantonValidatorDirective implements Validator {
-
-    kantonsListe: Array<string> = [];
-
-
-    constructor(@Attribute('kantonsListe') kantone: string) {
-        this.kantonsListe = kantone.split(',');
-    }
+    @Input()kantonsListe: string;
 
 
     public validate(c: AbstractControl): any {
-        if (this.kantonsListe.indexOf(c.value) > -1) {
-            return {};
+
+        console.log('kantonsListe ' + this.kantonsListe);
+
+        var kantone = this.kantonsListe.split(',');
+
+        console.log('kantone ' + kantone);
+        console.log('c.value ' + c.value);
+        console.log('kantone.indexOf(c.value) ' + kantone.indexOf(c.value));
+
+        if (kantone.indexOf(c.value) > -1) {
+            return{};
         }
-        return {
-            kantonsListe: true
-        };
+        return {irgendwas: 'blabla'};
     }
 }

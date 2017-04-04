@@ -40,12 +40,15 @@
         >
     </form>
 
-    {{ kt?.controls?.kanton?.hasError('kantonsListe') }}
 
-    <div *ngIf="kt?.controls?.kanton?.hasError('kantonsListe')">
+
+    <div *ngIf="kt?.controls?.kanton?.hasError('irgendwas')">
         {{ kanton }} ist kein Kanton.
     </div>
 
+    <hr>
+    {{ kt?.controls?.kanton?.hasError('irgendwas') }}
+    <hr>
 
 
 </section>
