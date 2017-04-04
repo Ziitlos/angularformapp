@@ -11,5 +11,5 @@ build
 *.iml
 
 # Generierte JS und Map Dateien
-src/**/*.js
+src/formapp/app/**/*.js
 src/**/*.map
