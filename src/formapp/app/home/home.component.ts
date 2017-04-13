@@ -3,8 +3,6 @@
  */
 
 import {Component, OnDestroy} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {Subscription} from 'rxjs';
 
 @Component({
     moduleId: module.id,
@@ -14,50 +12,71 @@ import {Subscription} from 'rxjs';
 
 export class HomeComponent {
 
+    /**
+     *
+     * Timer Up
+     *
+     */
+    private timerUpIsOn = 0;
+    private counterUpDisplay = 0;
+    private counterUp = 0;
 
-    private countUpDisp = 0;
-    private countDownDisp = 60000;
-    private counterUp = 1;
+    stopCountUp() {
+        this.timerUpIsOn = 0;
+    }
+
+    startCountUp() {
+        if (this.timerUpIsOn === 0) {
+            this.timerUpIsOn = 1;
+            setTimeout(this.countUp, 1000);
+        }
+    }
+
+    continueUpTimer() {
+        //console.log('aaaaa');
+        this.counterUp++;
+        this.counterUpDisplay = this.counterUp * 1000;
+        setTimeout(this.countUp, 1000);
+    }
+
+    countUp = () => {
+        if (this.timerUpIsOn === 1) {
+            //console.log('wwwwww');
+            this.continueUpTimer();
+        }
+    };
+
+    /**
+     *
+     * Timer Down
+     *
+     */
+    private timerDownIsOn = 0;
+    private counterDownDisplay = 60000;
     private counterDown = 60;
 
-    startZeit() {
-        console.log('Start Zeit');
-        setTimeout(alert('Start Zeit'), 3000);
+    stopCountDown() {
+        this.timerDownIsOn = 0;
     }
 
-
-    stopZeit() {
-        console.log('Stop Zeit');
-        setTimeout(function () {
-            alert('Stop Zeit');
-        }, 3000);
+    startCountDown() {
+        if (this.timerDownIsOn === 0) {
+            this.timerDownIsOn = 1;
+            setTimeout(this.countDown, 1000);
+        }
     }
 
-
-    private timer_is_on = 0;
-    private counterDisplay = 0;
-    private counter = 0;
-
-    stopCount() {
-        this.timer_is_on = 0;
+    continueDownTimer() {
+        //console.log('aaaaa');
+        this.counterDown--;
+        this.counterDownDisplay = this.counterDown * 1000;
+        setTimeout(this.countDown, 1000);
     }
 
-    startCount() {
-        this.timer_is_on = 1;
-        setTimeout(this.temp, 1000);
-    }
-
-    continueTimer() {
-        console.log('aaaaa');
-        this.counter++;
-        this.counterDisplay = this.counter * 1000;
-        setTimeout(this.temp, 1000);
-    }
-
-    temp = () => {
-        if (this.timer_is_on === 1) {
+    countDown = () => {
+        if (this.timerDownIsOn === 1) {
             //console.log('wwwwww');
-            this.continueTimer();
+            this.continueDownTimer();
         }
     };
 

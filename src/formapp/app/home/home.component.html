@@ -1,16 +1,15 @@
 <section>
     <h1>HOME</h1>
     <h2>Welcome Home</h2>
-    {{ countUpDisp | date:'mm:ss' }}
     <br>
-    {{ countDownDisp | date:'mm:ss' }}
-    <br>
-    <button (click)="startZeit()">START</button> <button (click)="stopZeit()">STOP</button>
-    <br>
-    {{ deinTick }}
+    <button (click)="startCountUp()">Start count up!</button>
+    {{ counterUpDisplay | date:'mm:ss' }}
+    <button (click)="stopCountUp()">Stop count up!</button>
     <br>
     <br>
-    <button (click)="startCount()">Start count!</button>
-    {{ counterDisplay | date:'mm:ss' }}
-    <button (click)="stopCount()">Stop count!</button>
+    <hr>
+    <br>
+    <button (click)="startCountDown()">Start count down!</button>
+    {{ counterDownDisplay | date:'mm:ss' }}
+    <button (click)="stopCountDown()">Stop count down!</button>
 </section>
