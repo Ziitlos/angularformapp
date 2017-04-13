@@ -52,8 +52,14 @@ export class HomeComponent {
      *
      */
     private timerDownIsOn = 0;
-    private counterDownDisplay = 60000;
-    private counterDown = 60;
+    private counterDownVorwahl = 180;
+    private counterDownDisplay = 180000;
+    private counterDown = 180;
+
+    setCountDownTime() {
+        this.counterDownDisplay = this.counterDownVorwahl * 1000;
+        this.counterDown = this.counterDownVorwahl;
+    }
 
     stopCountDown() {
         this.timerDownIsOn = 0;
@@ -70,7 +76,12 @@ export class HomeComponent {
         //console.log('aaaaa');
         this.counterDown--;
         this.counterDownDisplay = this.counterDown * 1000;
+
+        if (this.counterDown <= 0) {
+            this.timerDownIsOn = 0;
+        }
         setTimeout(this.countDown, 1000);
+
     }
 
     countDown = () => {
