@@ -8,4 +8,9 @@
     <button (click)="startZeit()">START</button> <button (click)="stopZeit()">STOP</button>
     <br>
     {{ deinTick }}
+    <br>
+    <br>
+    <button (click)="startCount()">Start count!</button>
+    {{ counterDisplay | date:'mm:ss' }}
+    <button (click)="stopCount()">Stop count!</button>
 </section>
