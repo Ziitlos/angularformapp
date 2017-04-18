@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "gulp clean",
-    "compile": "gulp compile",
     "build": "gulp build",
-    "typings": "typings",
     "start": "concurrent --kill-others \"gulp watch\" \"lite-server\"",
+    "compile": "gulp compile",
+    "typings": "typings",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "typings install --proxy=http://proxy-surf:8080"
   },
