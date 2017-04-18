@@ -20,6 +20,8 @@ export class HomeComponent {
     private timerUpIsOn = 0;
     private counterUpDisplay = 0;
     private counterUp = 0;
+    private disaSetReset = false;
+    private disaStart = false;
 
     stopCountUp() {
         this.timerUpIsOn = 0;
@@ -59,10 +61,20 @@ export class HomeComponent {
     setCountDownTime() {
         this.counterDownDisplay = this.counterDownVorwahl * 1000;
         this.counterDown = this.counterDownVorwahl;
+        // Wenn der Reset Button geklickt wird, ist auch der Start button klickbar
+        this.disaStart = false;
     }
 
     stopCountDown() {
         this.timerDownIsOn = 0;
+        // Nur wenn die Zeit kleiner gleich 0 ist darf der Resetbutton geklickt werden können
+        if (this.counterDown <= 0) {
+            this.disaSetReset = false;
+        }
+        // Nur wenn die Zeit grösser 0 ist darf der Startbutton geklickt werden können
+        if (this.counterDown > 0) {
+            this.disaStart = false;
+        }
     }
 
     startCountDown() {
@@ -70,6 +82,9 @@ export class HomeComponent {
             this.timerDownIsOn = 1;
             setTimeout(this.countDown, 1000);
         }
+        // Wenn der Start Button gklickt wurde, sind der Reset und Start Button disabled
+        this.disaSetReset = true;
+        this.disaStart = true;
     }
 
     continueDownTimer() {
@@ -79,6 +94,8 @@ export class HomeComponent {
 
         if (this.counterDown <= 0) {
             this.timerDownIsOn = 0;
+            // Nur wenn die Zeit 0 ist, darf die Zeit geresetet werden
+            this.disaSetReset = false;
         }
         setTimeout(this.countDown, 1000);
 

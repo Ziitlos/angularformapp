@@ -10,8 +10,8 @@
     <hr>
     <br>
     Vorwahl: <input type="text" id="counterDownVorwahl" name="counterDownVorwahl" value="" [(ngModel)]="counterDownVorwahl" style="width: 25px;"> Sekunden!
-    <button (click)="setCountDownTime()">Set / Reset</button><br>
-    <button (click)="startCountDown()">Start count down!</button>
+    <button (click)="setCountDownTime()" [disabled]="disaSetReset">Set / Reset</button><br><br>
+    <button (click)="startCountDown()" [disabled]="disaStart">Start count down!</button>
     {{ counterDownDisplay | date:'mm:ss' }}
     <button (click)="stopCountDown()">Stop count down!</button>
 </section>
